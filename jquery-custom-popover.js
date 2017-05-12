@@ -1,9 +1,11 @@
+;(function ( $, window, document, undefined ) {
+    'use strict';
+   $.fn.custompopover = function(options){
 
-
-$('.pop').data('content', 'this can be an html data which can be used to diaplay<button>test</button>');
-
-
-$(".pop").popover({ trigger: "manual" , html: true, animation:false})
+       return this.each(function(index, element){
+        var $element = $(element);
+    $element.data('content', options.template);
+    $element.popover({ trigger: "manual" , html: true, animation:false})
     .on("mouseenter", function () {
         var _this = this;
         $(this).popover("show");
@@ -16,5 +18,11 @@ $(".pop").popover({ trigger: "manual" , html: true, animation:false})
             if (!$(".popover:hover").length) {
                 $(_this).popover("hide");
             }
-        }, 300);
+        },0);
 });
+           
+       });
+   }
+})( jQuery, window, document );
+
+

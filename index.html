@@ -12,7 +12,7 @@
 
 <body>
   
-  <button type="button" class="btn btn-danger pop" data-container="body" data-toggle="popover" data-placement="right" data-original-title="" title="">
+  <button type="button" class="btn btn-danger pop1" data-container="body" data-toggle="popover" data-placement="right" data-original-title="" title="">
     Right
     </button>
     <br><br>
@@ -24,6 +24,10 @@
     </button>
   <br><br>
   <script src="jquery-custom-popover.js"></script>
+  <script type="text/javascript">
+  	$('.pop').custompopover({template : '<div class="popover__title">Test</div>'});
+  	$('.pop1').custompopover({template : '<div class="popover__title">Test2</div>'});
+  </script>
 </body>
 
 </html>
